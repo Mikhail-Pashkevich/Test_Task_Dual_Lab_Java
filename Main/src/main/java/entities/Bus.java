@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @Slf4j
 @Getter
 @EqualsAndHashCode
-public class Bus implements Serializable {
+public class Bus{
     private final String companyName;
     private final LocalTime departureTime;
     private final LocalTime arrivalTime;
