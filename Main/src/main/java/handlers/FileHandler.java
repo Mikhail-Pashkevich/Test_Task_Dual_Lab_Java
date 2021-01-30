@@ -26,8 +26,15 @@ public class FileHandler {
 
     public static void writeToFile(String fileName, List<Bus> buses) {
         String busesString = buses.stream()
+                .filter(bus -> bus.getCompanyName().equals("Posh"))
+                .map(Bus::toString)
+                .collect(Collectors.joining("\n"))
+                + "\n\n"
+                + buses.stream()
+                .filter(bus -> bus.getCompanyName().equals("Grotty"))
                 .map(Bus::toString)
                 .collect(Collectors.joining("\n"));
+
         writeStringToFile(fileName, busesString);
     }
 
